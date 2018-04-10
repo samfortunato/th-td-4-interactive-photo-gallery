@@ -1,13 +1,19 @@
+'use strict';
+
+// ---- Lightbox2
+
 lightbox.option({
 	'alwaysShowNavOnTouchDevices': true
 });
 
 
 
-// Search
+// ---- Search
 
-const photos = document.getElementById('photo-gallery').children;
-photos.item(0).remove();
+// Main search code
+
+const photos = Array.from(document.getElementById('photo-gallery').children);
+photos.shift();
 
 document.body.addEventListener('keyup', (event) => {
 
@@ -15,7 +21,7 @@ document.body.addEventListener('keyup', (event) => {
 
 	const searchValue = event.target.value.toLowerCase();
 
-	[...photos].forEach(photo => {
+	photos.forEach(photo => {
 
 		const photoCaption = photo.getAttribute('data-title').toLowerCase();
 
