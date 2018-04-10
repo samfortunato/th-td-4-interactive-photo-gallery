@@ -7,6 +7,7 @@ lightbox.option({
 // Search
 
 const photos = document.getElementById('photo-gallery').children;
+photos.item(0).remove();
 
 document.body.addEventListener('keyup', (event) => {
 
